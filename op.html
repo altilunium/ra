@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="icon" href="fav_ra.png" type="image/x-icon">
+        <title>ر</title>
+        <script src="a.js"></script>
+
+        <style>
+          @font-face {
+  font-family: 'Scheherazade';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(YA9Ur0yF4ETZN60keViq1kQQtZmptvY.woff2) format('woff2');
+  unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+}
+
+
+.cadr {
+ 
+    font-family: "Scheherazade",Lateef,LateefGR,Amiri,"Noto Naskh Arabic","Droid Arabic Naskh",Harmattan,"Arabic Typesetting","Traditional Arabic","Simplified Arabic","Arabic Transparent","Times New Roman",Arial,"Sakkal Majalla","Microsoft Uighur",Calibri,"Microsoft Sans Serif","Segoe UI",serif,sans-serif;
+    direction: rtl;
+    border: none;
+    color:white;
+}
+
+#i1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  width: 100%;
+  position: fixed;
+  
+}
+
+
+
+.fadein {
+  animation: fadein 2s linear;
+}
+.fadeout {
+  animation: fadeout 2s linear;
+}
+
+@keyframes fadein {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes fadeout {
+  0% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+.h {
+  display: none;
+}
+
+#m1{
+  font-size: 200px;
+  position:fixed;
+  left:30%;
+  top:0px;
+}
+
+#gt{
+  position: fixed;
+  left:30%;
+  top:25%;
+}
+
+#bgg{
+  height: 100%;
+  position: fixed;
+  top:0px;
+  left: 0px;
+  border-right:1px solid #412d13
+}
+
+#ra{
+  position: fixed;
+  right: 70px;
+  width: 250px;
+}
+
+    </style>
+
+
+
+    </head>
+    <body id="a1">
+
+    
+
+    <div class="mainsc" style="opacity:0">
+      <img src="bg.png" id="bgg" >
+      <img src="ra.png" id="ra" >
+    </div>
+     
+      
+      
+     
+    </body>
+
+<script>
+var fullBG = document.getElementById("a1")
+
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+
+
+async function companyLogoAtFirst(){
+  var openScreen = document.createElement("div")
+  openScreen.setAttribute("id","i1")
+  openScreen.innerHTML = "<img src='gi.png' id='i2'>"
+  
+  fullBG.appendChild(openScreen)
+  var sponsorHandler = document.getElementById("i1")
+  sponsorHandler.style.opacity = 0;
+  await sleep(1000)
+  sponsorHandler.classList.add("fadein")
+  await sleep(2000)
+  sponsorHandler.style.opacity = 1;
+  await sleep(500)
+  sponsorHandler.classList.remove("fadein")
+  sponsorHandler.classList.add("fadeout")
+  await sleep(2000)
+  sponsorHandler.style.opacity = 0;
+  sponsorHandler.classList.remove("fadeout")
+
+  anime({
+  targets: '#a1',
+  backgroundColor: ['#000', '#201916'],
+  easing: 'easeInOutQuad',
+  duration: 2000
+});
+
+await sleep(2000)
+
+anime({
+  targets: '.mainsc',
+  opacity : ['0','1'],
+  easing: 'easeInOutQuad',
+  duration : 2000
+});
+
+  
+  fullBG.removeChild(openScreen)
+
+
+}
+
+
+window.onload = async function() {
+  fullBG.style.backgroundColor = "black";
+  companyLogoAtFirst()
+  //fullBG.style.backgroundColor = "#201916"
+
+
+};
+
+</script>
+
+</html>
